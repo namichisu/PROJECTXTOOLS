@@ -8,7 +8,7 @@ export const tools = [
 ["PDF & Files","🔢","Add Page Numbers","Add page numbers to a PDF.","pageNumbers"],
 ["PDF & Files","🖼️","PDF to Image","Render PDF pages as images.","pdfImage"],
 ["PDF & Files","🔍","OCR Image to Text","Upload an image and prepare it for text extraction.","ocr"],
-["PDF & Files","📷","Scan to PDF","Create a document PDF from photos.","photoPdf"],
+["PDF & Files","📷","Scan to PDF","Create a document PDF from photos.","scanPdf"],
 
 ["Image Tools","🗜️","Image Compressor","Compress images directly in your browser.","imageCompress"],
 ["Image Tools","📐","Image Resizer","Resize an image to custom dimensions.","imageResize"],

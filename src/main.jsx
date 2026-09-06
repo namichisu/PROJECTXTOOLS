@@ -14,13 +14,14 @@ function ToolModal({tool,onClose}){
  const action=()=>{
    const id=tool[4];
    if(id==="wordCounter"){const t=text.trim();setResult(`Words: ${t?t.split(/\\s+/).length:0} | Characters: ${text.length}`)}
+   if(id==="wordCounter"){const t=text.trim();setResult(`Words: ${t?t.split(/\s+/).length:0} | Characters: ${text.length}`)}
    else if(id==="jsonFormatter"){try{setResult(JSON.stringify(JSON.parse(text),null,2))}catch{setResult("Invalid JSON")}}
    else if(id==="caseConverter")setResult(text.toUpperCase());
    else if(id==="reverseText")setResult([...text].reverse().join(""));
    else if(id==="slug")setResult(text.toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""));
    else if(id==="uuid")setResult(crypto.randomUUID());
    else if(id==="percentage"){const [a,b]=text.split(",").map(Number);setResult(b?`${(a/b*100).toFixed(2)}%`:"Enter: part,total")}
-   else if(id==="calculator"){try{if(!/^[0-9+\\-*/().%\\s]+$/.test(text))throw 0;setResult(String(Function(`return (${text})`)()))}catch{setResult("Invalid expression")}}
+   else if(id==="calculator"){try{if(!/^[0-9+\-*/().%\s]+$/.test(text))throw 0;setResult(String(Function(`return (${text})`)()))}catch{setResult("Invalid expression")}}
    else if(id==="password"){let chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%^&*";let s="";for(let i=0;i<16;i++)s+=chars[Math.floor(Math.random()*chars.length)];setResult(s)}
    else if(id==="base64"){try{setResult(btoa(text))}catch{setResult("Could not encode text")}}
    else if(id==="textRepeater")setResult(Array(5).fill(text).join("\n"));
